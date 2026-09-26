@@ -152,6 +152,8 @@ AI-powered, CLI-agnostic job search automation: pipeline tracking, offer evaluat
 | `weekly-digest.mjs` | Rolls up `interview-prep/sessions/*.md` (default: current ISO week) into a per-company round summary, recurring competency-tag counts, and best-effort recurring 🔴 gaps from `question-bank.md` (JSON or `--summary`) |
 | `reports/` | Evaluation reports `{###}-{company-slug}-{YYYY-MM-DD}.md` — Blocks A-F + G (Posting Legitimacy) + Risk Summary + `## Machine Summary` YAML; header includes `**Legitimacy:** {tier}`; **REQUIRED:** a `## Job Description (archived verbatim)` section with the JD's verbatim text, or an equivalent `jds/` capture (#2789) |
 | `check-jd-archive.mjs` | Validates every `reports/*.md` has an archived JD — an embedded `## Job Description` section with substantive content, or a matching `jds/` capture resolved by report number via `jd-capture.mjs`; flags `missing-jd-archive`; read-only (JSON or `--summary` table output) |
+| `ollama-triage.mjs` | Zero-Claude-token first pass: runs `modes/triage.md`'s go/no-go against `modes/_brief.md` on a local Ollama model (default `qwen2.5:14b`) instead of Claude. Model only judges per-dimension scores/DQ hits/red flags; the weighted score, hard-DQ cap and PASS/MARGINAL/FAIL verdict are computed deterministically in code. Writes no files (stdout only); `--cache <path>` reuses verdicts across runs (keyed to brief + model, so editing `_brief.md` re-triages everything); loopback-only unless `OLLAMA_ALLOW_REMOTE=1` (the brief, including comp floor and proof points, is sent to the endpoint). Coarser than a full evaluation — PASS entries still need `/career-ops pipeline` |
+| `daily.mjs` | Chains scan → liveness sweep → `ollama-triage.mjs` (cached) → auto-close blacklisted/expired postings → follow-up check → `verify-pipeline.mjs` health check into one zero-Claude-token routine, ending in an `output/daily-YYYY-MM-DD.md` digest, `data/daily.log`, and a macOS notification. PASS/MARGINAL/FAIL all stay pending for the user (FAIL is listed as "likely no-go", not auto-closed — local-model verdicts are a coarse filter). Auto-starts the Ollama app if it isn't running. Good candidate for the `/loop`/cron automation offered in onboarding Step 6 |
 
 ### Plugins (optional)
 
@@ -337,7 +339,8 @@ Two separate axes:
 | Fills out application form | `apply` |
 | Searches for new offers | `scan` |
 | Processes pending URLs | `pipeline` |
-| Wants a fast first-pass filter before full evaluation | `triage` |
+| Wants a fast first-pass filter before full evaluation | `triage` (Claude) — or `node ollama-triage.mjs` for a zero-token pass on a local Ollama model, same rules from `modes/_brief.md` |
+| Wants the whole daily routine (scan, liveness, local triage, follow-ups, health) run with zero Claude tokens | `node daily.mjs` — see Main Files |
 | Batch processes offers | `batch` |
 | Asks about rejection patterns, wants to improve targeting, or wants to match interview answers to best-fit roles | `patterns` |
 | Wants to know whether the evaluation scores are predicting their real outcomes (interviews/offers) | `calibrate` — advisory report over `/outcome` data; never changes scoring |
