@@ -37,6 +37,7 @@ import { withPipelineLock } from './pipeline-lock.mjs';
 import { hasFlag, validateFlags } from './lib/cli-flags.mjs';
 import { isMainModule } from './lib/is-main-module.mjs';
 import { cleanField, parsePending } from './ollama-triage.mjs';
+import { probeOllama, LOCAL_OLLAMA_URL } from './ollama-client.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const DATA_ROOT = getCareerOpsRoot();
@@ -75,9 +76,18 @@ function run(script, args = [], { timeoutMs = 30 * 60_000 } = {}) {
  * Start the macOS app if the API does not answer, and wait for it (≤60 s).
  */
 async function ensureOllama() {
-  const base = (process.env.OLLAMA_BASE_URL || 'http://localhost:11434').replace(/\/$/, '');
+  // Explicit OLLAMA_BASE_URL always wins outright (same precedence as every
+  // other Ollama entry point); otherwise try the server (if configured) then
+  // local, matching the failover the child ollama-triage.mjs process will use.
+  const explicit = process.env.OLLAMA_BASE_URL?.trim();
+  const candidates = explicit
+    ? [explicit]
+    : [process.env.OLLAMA_SERVER_URL?.trim(), LOCAL_OLLAMA_URL].filter(Boolean);
   const up = async () => {
-    try { return (await fetch(`${base}/api/tags`, { signal: AbortSignal.timeout(3_000) })).ok; } catch { return false; }
+    for (const url of candidates) {
+      if ((await probeOllama(url, { timeoutMs: 3_000 })).ok) return true;
+    }
+    return false;
   };
   if (await up()) return true;
   if (!existsSync('/Applications/Ollama.app')) return false;

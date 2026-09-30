@@ -22,6 +22,9 @@ const copyIntoFixture = (relativePath) => {
 
 for (const relativePath of [
   'ollama-eval.mjs',
+  // ollama-eval resolves its endpoint (server->local failover) through this
+  // shared helper (#4520), so the fixture has to carry it too.
+  'ollama-client.mjs',
   'profile-language.mjs',
   'reserve-report-num.mjs',
   'tracker-aliases.json',

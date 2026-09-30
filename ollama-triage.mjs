@@ -45,6 +45,7 @@ import { isAtsPosting } from './liveness-api.mjs';
 import { flagValue, hasFlag, safeIntFlag, validateFlags } from './lib/cli-flags.mjs';
 import { isMainModule } from './lib/is-main-module.mjs';
 import { loadBlacklist, findBlacklistEntry } from './scan.mjs';
+import { resolveOllamaBaseUrl } from './ollama-client.mjs';
 
 const DATA_ROOT = getCareerOpsRoot();
 const PATHS = {
@@ -392,17 +393,11 @@ async function main(args) {
   }
 
   const model = flagValue(args, '--model') || process.env.OLLAMA_TRIAGE_MODEL || 'qwen2.5:14b';
-  const baseUrl = (process.env.OLLAMA_BASE_URL || 'http://localhost:11434').replace(/\/$/, '');
+  let baseUrl = null; // resolved below, once we know entries.length (server->local failover)
+  let requestModel = model; // may switch to OLLAMA_SERVER_MODEL if the server endpoint wins
   const numCtx = safeIntFlag(process.env.OLLAMA_NUM_CTX, 8192);
   const timeoutMs = safeIntFlag(process.env.OLLAMA_TIMEOUT_MS, 180_000);
   const asJson = hasFlag(args, '--json');
-
-  // Loopback guard — the brief (comp floor, proof points) is sent to this endpoint.
-  const host = (() => { try { return new URL(baseUrl).hostname; } catch { return ''; } })();
-  if (!['localhost', '127.0.0.1', '::1', '[::1]'].includes(host) && process.env.OLLAMA_ALLOW_REMOTE !== '1') {
-    console.error(`❌  ${baseUrl} is not a local endpoint; your brief would leave this machine. Set OLLAMA_ALLOW_REMOTE=1 if intended.`);
-    process.exit(1);
-  }
 
   if (!existsSync(PATHS.brief)) {
     console.error('❌  modes/_brief.md not found — triage needs it (run `node doctor.mjs` to create it from the template).');
@@ -467,16 +462,17 @@ async function main(args) {
   });
   if (entries.length === 0 && blocked.length === 0 && cached.length === 0) { console.error('Nothing pending to triage.'); return; }
 
-  // Ollama reachable, model present (only needed when something is uncached)
+  // Resolve which Ollama endpoint to use (server->local failover), model present.
+  // The server may run a different (often larger) model than local, so the
+  // model actually requested (requestModel) can differ from `model`, which
+  // stays the cache key / --model-flag value regardless of which endpoint wins.
   if (entries.length) try {
-    const tags = await (await fetch(`${baseUrl}/api/tags`, { signal: AbortSignal.timeout(5_000) })).json();
-    const names = (tags.models || []).map((m) => m.name);
-    if (!names.includes(model) && !names.includes(`${model}:latest`)) {
-      console.error(`❌  Model "${model}" is not pulled. Available: ${names.join(', ') || '(none)'}\n    ollama pull ${model}`);
-      process.exit(1);
-    }
-  } catch {
-    console.error(`❌  Ollama not reachable at ${baseUrl} — start it with \`ollama serve\`.`);
+    const resolved = await resolveOllamaBaseUrl({ model, log: (m) => console.error(`  ${m}`) });
+    baseUrl = resolved.baseUrl;
+    requestModel = resolved.model || model;
+    if (resolved.source === 'server') console.error(`  Using server Ollama at ${baseUrl} (model: ${requestModel})`);
+  } catch (err) {
+    console.error(`❌  ${err.message}`);
     process.exit(1);
   }
 
@@ -485,7 +481,7 @@ async function main(args) {
   const systemPrompt = buildSystemPrompt(brief, parseOutputLanguage(profileYml), hardDqList, softFlagList);
   const schema = buildJudgementSchema(hardDqList, softFlagList);
   const log = (m) => process.stderr.write(`${m}\n`);
-  log(`🔎  Triaging ${entries.length} posting(s) with ${model} (PASS ≥ ${threshold.toFixed(1)})${cached.length ? `, ${cached.length} from cache` : ''}`);
+  log(`🔎  Triaging ${entries.length} posting(s) with ${requestModel} (PASS ≥ ${threshold.toFixed(1)})${cached.length ? `, ${cached.length} from cache` : ''}`);
 
   const results = [...blocked, ...cached];
   for (const r of blocked) log(`  [blacklist] ${formatLine(r)}`);
@@ -507,7 +503,7 @@ async function main(args) {
     } else {
       const t0 = Date.now();
       try {
-        const raw = await judge({ baseUrl, model, numCtx, timeoutMs, systemPrompt, schema, entry, jdText: jd.text });
+        const raw = await judge({ baseUrl, model: requestModel, numCtx, timeoutMs, systemPrompt, schema, entry, jdText: jd.text });
         const { j: corrected, overridden } = applyRegionOverride(raw, hardDqList);
         const j = foldChecks(corrected, hardDqList, softFlagList);
         const company = entry.company || j.company;
