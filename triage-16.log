@@ -1,0 +1,21 @@
+  Using server Ollama at http://10.241.150.2:31434 (model: qwen3:30b-a3b-instruct-2507-q4_K_M)
+🔎  Triaging 17 posting(s) with qwen3:30b-a3b-instruct-2507-q4_K_M (PASS ≥ 3.5)
+  [1/17] TRIAGE: FAIL | Helsing | Procurement Project Manager | 0.9/5 | On-site in Munich; requires relocation and sponsorship; no remote option (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stage/domain far outs…
+  [2/17] TRIAGE: FAIL | Helsing | Product Manager | 1.9/5 | on-site only in Germany, no remote option, requires relocation (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stage/domain far outside SaaS,…
+  [3/17] TRIAGE: FAIL | Helsing | Product Manager for Electronic Warfare | 2.5/5 | On-site only in Germany; requires relocation; no remote option; candidate ineligible (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [4/17] TRIAGE: FAIL | HelloFresh | Product Manager, Surcharge & Market Strategy | 2.5/5 | On-site only in London; no remote option; candidate ineligible due to location (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [5/17] TRIAGE: FAIL | HelloFresh Ireland | Senior Product Manager | 2.5/5 | On-site in Ireland; no remote option; requires ROI work rights; candidate ineligible (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [6/17] TRIAGE: FAIL | HelloFresh | Delivery Network Squad Lead, Supply Chain Technology | 2.5/5 | On-site only in Warsaw; no remote option; candidate cannot relocate or work outside Serbia (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [7/17] TRIAGE: FAIL | HelloFresh | Senior Product Manager, Operational Data Platform | 2.5/5 | On-site only in Warsaw; no remote option; candidate based in Belgrade, Serbia (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [8/17] TRIAGE: FAIL | HelloFresh | Senior Product Manager | 2.4/5 | On-site in Paris; no remote option; requires relocation (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [9/17] TRIAGE: FAIL | HelloFresh | Staff Product Manager | 2.5/5 | On-site only in Warsaw, no remote option; candidate cannot relocate. (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [10/17] TRIAGE: FAIL | N26 | Head of Product - Core Banking Systems | 2.5/5 | On-site only in Berlin; no remote/hybrid option; role requires deep engineering ownership (Hard DQ: Primary hands-on skill is deep engineering (e.g., a coding-…
+  [11/17] TRIAGE: FAIL | N26 | Head of Lending | 2.5/5 | Regular hybrid/on-site outside Serbia; no remote option stated. (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [12/17] TRIAGE: FAIL | N26 | Senior Product Manager - Intelligent Operations Platforms | 2.5/5 | On-site only in Barcelona; no remote option; candidate cannot relocate (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [13/17] TRIAGE: FAIL | N26 | Technical Product Manager for Applied Machine Learning | 2.5/5 | On-site only in Barcelona; no remote option; candidate ineligible without relocation (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [14/17] TRIAGE: FAIL | SumUp | Senior Product Manager – Consumer Lifecycle | 2.5/5 | FAIL: On-site only in UK, no sponsorship, candidate lacks UK work rights (Hard DQ: Role requires work authorization/sponsorship in a country outside Serbia and…
+  [15/17] TRIAGE: FAIL | SumUp | Senior Product Manager | 2.5/5 | On-site only in Berlin; no remote option; candidate cannot relocate (Hard DQ: Regular hybrid/on-site outside Serbia)
+  [16/17] TRIAGE: SKIP | Unknown | Unknown | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+  [17/17] TRIAGE: PASS | Volkswagen Group Services Sucursal en España | Product Manager | 4.0/5 | Remote by agreement, no relocation, matches key proof points
+
+PASS 1 · MARGINAL 0 · FAIL 15 · SKIP 1 · ERROR 0 — 457s total. Local-model scores are a coarse filter: run a full evaluation before applying.

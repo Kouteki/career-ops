@@ -1,0 +1,35 @@
+
+TRIAGE: PASS | Volkswagen Group Services Sucursal en España | Product Manager | 4.0/5 | Remote by agreement, no relocation, matches key proof points
+    https://jobs.volkswagen-group.com/Volkswagen-Group-Services/job/Valencia-Product-Manager-V-46002/1386989433/
+TRIAGE: FAIL | Helsing | Product Manager for Electronic Warfare | 2.5/5 | On-site only in Germany; requires relocation; no remote option; candidate ineligible (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://helsing.ai/jobs/4869481101?gh_jid=4869481101
+TRIAGE: FAIL | HelloFresh | Product Manager, Surcharge & Market Strategy | 2.5/5 | On-site only in London; no remote option; candidate ineligible due to location (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://careers.hellofresh.com/global/en/job/8204371?gh_jid=8204371
+TRIAGE: FAIL | HelloFresh Ireland | Senior Product Manager | 2.5/5 | On-site in Ireland; no remote option; requires ROI work rights; candidate ineligible (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://careers.hellofresh.com/global/en/job/8025707?gh_jid=8025707
+TRIAGE: FAIL | HelloFresh | Delivery Network Squad Lead, Supply Chain Technology | 2.5/5 | On-site only in Warsaw; no remote option; candidate cannot relocate or work outside Serbia (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://careers.hellofresh.com/global/en/job/8186086?gh_jid=8186086
+TRIAGE: FAIL | HelloFresh | Senior Product Manager, Operational Data Platform | 2.5/5 | On-site only in Warsaw; no remote option; candidate based in Belgrade, Serbia (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://careers.hellofresh.com/global/en/job/8095957?gh_jid=8095957
+TRIAGE: FAIL | HelloFresh | Staff Product Manager | 2.5/5 | On-site only in Warsaw, no remote option; candidate cannot relocate. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://careers.hellofresh.com/global/en/job/8043204?gh_jid=8043204
+TRIAGE: FAIL | N26 | Head of Product - Core Banking Systems | 2.5/5 | On-site only in Berlin; no remote/hybrid option; role requires deep engineering ownership (Hard DQ: Primary hands-on skill is deep engineering (e.g., a coding-…
+    https://n26.com/en-eu/careers/positions/8111591?gh_jid=8111591
+TRIAGE: FAIL | N26 | Head of Lending | 2.5/5 | Regular hybrid/on-site outside Serbia; no remote option stated. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://n26.com/en-eu/careers/positions/7988511?gh_jid=7988511
+TRIAGE: FAIL | N26 | Senior Product Manager - Intelligent Operations Platforms | 2.5/5 | On-site only in Barcelona; no remote option; candidate cannot relocate (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://n26.com/en-eu/careers/positions/8196495?gh_jid=8196495
+TRIAGE: FAIL | N26 | Technical Product Manager for Applied Machine Learning | 2.5/5 | On-site only in Barcelona; no remote option; candidate ineligible without relocation (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://n26.com/en-eu/careers/positions/8196295?gh_jid=8196295
+TRIAGE: FAIL | SumUp | Senior Product Manager – Consumer Lifecycle | 2.5/5 | FAIL: On-site only in UK, no sponsorship, candidate lacks UK work rights (Hard DQ: Role requires work authorization/sponsorship in a country outside Serbia and…
+    https://sumup.com/careers/positions/8821322002?gh_jid=8821322002
+TRIAGE: FAIL | SumUp | Senior Product Manager | 2.5/5 | On-site only in Berlin; no remote option; candidate cannot relocate (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://sumup.com/careers/positions/8602383002?gh_jid=8602383002
+TRIAGE: FAIL | HelloFresh | Senior Product Manager | 2.4/5 | On-site in Paris; no remote option; requires relocation (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://careers.hellofresh.com/global/en/job/8093756?gh_jid=8093756
+TRIAGE: FAIL | Helsing | Product Manager | 1.9/5 | on-site only in Germany, no remote option, requires relocation (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stage/domain far outside SaaS,…
+    https://helsing.ai/jobs/4947377101?gh_jid=4947377101
+TRIAGE: FAIL | Helsing | Procurement Project Manager | 0.9/5 | On-site in Munich; requires relocation and sponsorship; no remote option (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stage/domain far outs…
+    https://helsing.ai/jobs/4862537101?gh_jid=4862537101
+TRIAGE: SKIP | Unknown | Unknown | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://jobs.lever.co/spotify/ee45924c-894c-4ea0-9c93-c5221894063f

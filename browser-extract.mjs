@@ -457,6 +457,40 @@ async function fetchGreenhouseJd(apiUrl, postingUrl, textCap, timeoutMs) {
 }
 
 /**
+ * Fetch one Greenhouse posting reached through a company careers page that
+ * exposes only `?gh_jid=` (no board in the URL). The embed endpoint's redirect
+ * names the board — the same `followEmbed` step checkLivenessViaApi uses — and
+ * the per-job API then serves the body exactly as for a plain Greenhouse URL.
+ * Null on any inconclusive outcome, same contract as the other fetchers.
+ *
+ * @param {object} resolved - `resolveAtsApi(url)` for a greenhouse-embedded URL
+ * @param {string} postingUrl
+ * @param {number} textCap
+ * @param {number} timeoutMs - budget for the embed lookup; the job fetch gets its own
+ */
+async function fetchGreenhouseEmbeddedJd(resolved, postingUrl, textCap, timeoutMs) {
+  if (typeof resolved.followEmbed !== 'function') return null;
+  if (rejectPrivateOrInvalid(resolved.apiUrl)) return null;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  let jobApiUrl;
+  try {
+    const res = await fetch(resolved.apiUrl, {
+      headers: { 'user-agent': DEFAULT_USER_AGENT },
+      redirect: 'manual',
+      signal: controller.signal,
+    });
+    jobApiUrl = await resolved.followEmbed(res, resolved.parts);
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+  if (!jobApiUrl) return null;
+  return fetchGreenhouseJd(jobApiUrl, postingUrl, textCap, timeoutMs);
+}
+
+/**
  * Shape one Lever posting into a jd-mode result. Pure, same contract as the
  * other normalizers.
  *
@@ -501,7 +535,25 @@ export function normalizeLeverJob(json, postingUrl, textCap = JD_TEXT_CAP) {
   if (!body) return null;
 
   const meta = [];
-  if (str(json?.categories?.location)) meta.push(`Location: ${str(json.categories.location)}`);
+  const primary = str(json?.categories?.location);
+  if (primary) meta.push(`Location: ${primary}`);
+  // `location` is a single primary city; a multi-location posting lists the
+  // rest only in `allLocations`, and the description body usually repeats just
+  // the primary one. Dropping them made a Paris+Belgrade req read Paris-only
+  // and fail the triage location gate. Same merge as providers/lever.mjs's
+  // resolveLocation(), same line shape as normalizeAshbyJob's secondaryLocations.
+  if (Array.isArray(json?.categories?.allLocations)) {
+    const seen = new Set(primary ? [primary.toLowerCase()] : []);
+    const extra = [];
+    for (const l of json.categories.allLocations.map(str)) {
+      if (l && !seen.has(l.toLowerCase())) { seen.add(l.toLowerCase()); extra.push(l); }
+    }
+    if (extra.length) meta.push(`Additional locations: ${extra.join(' | ')}`);
+  }
+  // `workplaceType` is one of onsite / hybrid / remote / unspecified; the last
+  // carries no signal, so it is left out rather than printed.
+  const workplaceType = str(json.workplaceType);
+  if (workplaceType && workplaceType.toLowerCase() !== 'unspecified') meta.push(`Work model: ${workplaceType}`);
   if (str(json?.categories?.team)) meta.push(`Team: ${str(json.categories.team)}`);
 
   return {
@@ -565,6 +617,8 @@ export const JD_FETCHERS = {
     fetchAshbyJd(resolved.apiUrl, resolved.parts.jobId, url, textCap, timeoutMs),
   greenhouse: (resolved, url, textCap, timeoutMs) =>
     fetchGreenhouseJd(resolved.apiUrl, url, textCap, timeoutMs),
+  'greenhouse-embedded': (resolved, url, textCap, timeoutMs) =>
+    fetchGreenhouseEmbeddedJd(resolved, url, textCap, timeoutMs),
   lever: (resolved, url, textCap, timeoutMs) =>
     fetchLeverJd(resolved.apiUrl, url, textCap, timeoutMs),
 };

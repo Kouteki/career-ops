@@ -1,0 +1,231 @@
+
+TRIAGE: MARGINAL | Spotify | Principal Product Manager - Audio and Media Playback | 3.4/5 | Regular hybrid/on-site outside Serbia, no remote option preferred.
+    https://jobs.lever.co/spotify/080868dd-fc8c-4648-b6ab-6780d8ca3d63
+TRIAGE: MARGINAL | Spotify | Principal Product Manager - Personalization | 3.4/5 | Role aligns with Senior PM archetype, no comp range, on-site outside Serbia
+    https://jobs.lever.co/spotify/e74bfb24-55de-4d93-b228-ae38b8fdfbea
+TRIAGE: MARGINAL | 1dea | AI Delivery Manager / AI Program Manager | 3.1/5 | Role matches delivery/roadmap ownership but low comp, requires Polish language (flags: Language requirement that's not English)
+    https://solid.jobs/o/auada9p8/career-ops
+TRIAGE: MARGINAL | PTT Consulting | Senior Project Manager | 3.1/5 | Below comp floor, requires PMP certification not held by candidate (flags: Requires a professional certification (e.g., PMP) not held)
+    https://solid.jobs/o/ynwqh0iv/career-ops
+TRIAGE: FAIL | Nortal | Senior Program / Project Manager (EU and Defence R&D) | 2.9/5 | No specific location or compensation details provided, role focus unclear.
+    https://careers-en-nortal.icims.com/jobs/6437/senior-program---project-manager-%28eu-and-defence-r%26d%29/job
+TRIAGE: FAIL | Nortal | Project Manager | 2.9/5 | No location or compensation details provided, role lacks specific ownership details.
+    https://careers-en-nortal.icims.com/jobs/6345/project-manager/job
+TRIAGE: FAIL | 1dea | Project Manager (ICT / Power Platform & ServiceNow) | 2.6/5 | Language requirement (Polish), below comp floor (flags: Language requirement that's not English)
+    https://solid.jobs/o/mdnw1rue/career-ops
+TRIAGE: FAIL | apreel | IT Project Manager | 2.6/5 | Below comp floor, requires PMP certification and English proficiency (flags: Requires a professional certification (e.g., PMP) not held; Language requirement t…
+    https://solid.jobs/o/3zoiqhbr/career-ops
+TRIAGE: FAIL | Parloa | Senior Partner Delivery Manager (UK) | 2.5/5 | Regular hybrid/on-site outside Serbia, no direct match to candidate's experience. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.eu.greenhouse.io/parloa/jobs/4988030101
+TRIAGE: FAIL | Parloa | Senior Technical Program Manager | 2.5/5 | On-site requirement in Berlin, no remote option (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.eu.greenhouse.io/parloa/jobs/4977196101
+TRIAGE: FAIL | Parloa | Staff/Principal Product Manager, Infrastructure Platform | 2.5/5 | Berlin office, no remote option (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.eu.greenhouse.io/parloa/jobs/4905260101
+TRIAGE: FAIL | Intercom | Senior Product Manager- Messenger | 2.5/5 | Regular hybrid/on-site outside Serbia, location mismatch (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.greenhouse.io/intercom/jobs/5663703
+TRIAGE: FAIL | Intercom | Staff AI Product Manager | 2.5/5 | Regular hybrid/on-site outside Serbia, no direct match to Proof Points (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.greenhouse.io/intercom/jobs/7377200
+TRIAGE: FAIL | Travelperk | Staff Product Manager - Spend & Expense Platform | 2.5/5 | Requires on-site presence in London, outside Serbia. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/perk/cc9fb69f-bb52-4e21-a7ab-7358175f6414
+TRIAGE: FAIL | GetYourGuide | Lead Product Manager, Discovery | 2.5/5 | Requires regular on-site presence outside Serbia (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.greenhouse.io/getyourguide/jobs/7649294
+TRIAGE: FAIL | GetYourGuide | Lead Product Manager, Paid Search | 2.5/5 | Regular hybrid/on-site outside Serbia, no remote option. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.greenhouse.io/getyourguide/jobs/7657103
+TRIAGE: FAIL | Photoroom | Product Manager, Editing Foundations | 2.5/5 | Hybrid role outside Serbia, no remote option. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/photoroom/4886fd85-2b2c-4dca-bf48-1dbc370629bc
+TRIAGE: FAIL | Photoroom | Senior Product Manager, SMB e-commerce Growth | 2.5/5 | Requires relocation to Paris, outside Serbia. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/photoroom/022b6f5b-bb46-45b7-801a-8a5f3b92a968
+TRIAGE: FAIL | Photoroom | Staff Product Manager, Agentic & AI Platform | 2.5/5 | Regular hybrid outside Serbia, no remote option. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/photoroom/7c34d35a-c405-4d19-bd6a-38f8dd2081a7
+TRIAGE: FAIL | Photoroom | Senior Product Manager, Core Product | 2.5/5 | Regular hybrid outside Serbia, mismatch with remote preference (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/photoroom/d075be71-4a2d-489a-9879-18e43363094e
+TRIAGE: FAIL | Synthesia | Product Manager, Growth (Staff/Principal-level) | 2.5/5 | Role focuses heavily on GTM, lacks product delivery ownership. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no deliver…
+    https://jobs.ashbyhq.com/synthesia/85e7b0df-f603-416b-a7bd-3331b6576186
+TRIAGE: FAIL | Faculty | Delivery Manager | 2.5/5 | Regular hybrid/on-site outside Serbia, no comp range stated (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/faculty/7d725aa6-7d91-4bbd-abb9-c20d5fbcf424
+TRIAGE: FAIL | Lovable | Product Manager (Agents) | 2.5/5 | On-site requirement outside Serbia, hard DQ. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/lovable/1140665c-a426-49d5-bcdd-f78560efe50d
+TRIAGE: FAIL | Legora | Senior Product Manager - UX Core | 2.5/5 | On-site requirement outside Serbia, no remote option. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/legora/32801e6a-236e-49f0-80e0-3f9090d01b27
+TRIAGE: FAIL | Legora | Senior Product Manager | 2.5/5 | On-site only in Stockholm, no remote option (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/legora/5b15c4aa-effa-4b9c-95bc-c061c70dfca9
+TRIAGE: FAIL | Spotify | Senior Product Manager - Subscriptions | 2.5/5 | Role requires regular in-person meetings outside Serbia (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no delivery/roadm…
+    https://jobs.lever.co/spotify/a57db22d-dc0d-4f36-9a2e-34acdf1ec046
+TRIAGE: FAIL | Pigment | Senior Product Manager | 2.5/5 | Regular hybrid/on-site outside Serbia, no remote option. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.lever.co/pigment/270ef023-99ec-48c7-8b90-c638600aefef
+TRIAGE: FAIL | Spotify | Product Manager - Customer Service Platform | 2.5/5 | Role requires regular in-person meetings outside Serbia. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.lever.co/spotify/7f0a8faa-f4f5-4db9-9f51-4101d6a29b34
+TRIAGE: FAIL | Spotify | Senior Product Manager - Audiobooks Format Foundations | 2.5/5 | Regular hybrid/on-site outside Serbia (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.lever.co/spotify/e7b01c1e-4246-4f31-83ea-9219c8b22c83
+TRIAGE: FAIL | Parloa | Senior Program Manager, Product & GTM Programs | 2.4/5 | On-site requirement outside Serbia, no remote option (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.eu.greenhouse.io/parloa/jobs/4977872101
+TRIAGE: FAIL | Parloa | Staff/Principal Product Manager, Agent Management Platform | 2.4/5 | Berlin office, no remote option (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.eu.greenhouse.io/parloa/jobs/4975772101
+TRIAGE: FAIL | Travelperk | Staff Product Manager - Billing (VAT) | 2.4/5 | Hybrid model requires commuting to Barcelona, outside candidate's remote preference. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/perk/1e065abd-730d-4d73-b7ac-8e4a513ce91c
+TRIAGE: FAIL | GetYourGuide | Group Product Manager, B2C | 2.4/5 | Regular hybrid/on-site outside Serbia, no remote option. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://job-boards.greenhouse.io/getyourguide/jobs/8071476
+TRIAGE: FAIL | Qonto | Staff Product Manager \[Machine Learning expertise\] | 2.4/5 | On-site in Paris, no remote option (Hard DQ: location rules exclude this posting)
+    https://jobs.lever.co/qonto/7c6908ae-fa05-49a2-8680-ca1aeb885460
+TRIAGE: FAIL | Faculty | Delivery Manager (Safety) | 2.4/5 | Hybrid role outside Serbia, no comp range stated (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/faculty/d0c64f41-722d-4359-946d-37ed6ab16954
+TRIAGE: FAIL | Mollie | Senior Product Delivery Manager - Onboarding | 2.4/5 | Hybrid role outside Serbia, no comp range stated. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.ashbyhq.com/mollie/cc083abc-bfd9-49b6-8642-9bfc9ab7338d
+TRIAGE: FAIL | Pigment | Engineering Program Manager | 2.4/5 | Regular hybrid/on-site outside Serbia, does not match location preference. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.lever.co/pigment/898bb235-6fa9-43fd-a3e2-00d54a6a39cc
+TRIAGE: FAIL | Parloa | (Senior) Technical Project Manager Germany | 2.3/5 | Requires on-site in Germany, language requirement (German) (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://job-boards.eu.greenhouse.io/parloa/jobs/4719998101
+TRIAGE: FAIL | TeamQuest | Delivery Manager | 2.3/5 | Hybrid model outside Serbia, below comp floor. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://solid.jobs/o/ki9gdwpm/career-ops
+TRIAGE: FAIL | Nortal | Product Owner | 2.2/5 | Location details missing, assume on-site; no range stated; generic role description (Hard DQ: location rules exclude this posting)
+    https://careers-en-nortal.icims.com/jobs/6315/product-owner/job
+TRIAGE: FAIL | GetYourGuide | Lead Product Manager, Landing Pages | 2.1/5 | Regular hybrid/on-site outside Serbia, pure GTM focus (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no delivery/roadmap…
+    https://job-boards.greenhouse.io/getyourguide/jobs/8194650
+TRIAGE: FAIL | Celonis | Senior Application Product Manager - Oracle Transformation Solutions | 2.1/5 | On-site requirement outside Serbia, language requirement (German). (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not Eng…
+    https://job-boards.greenhouse.io/celonis/jobs/7885761003?gh_jid=7885761003
+TRIAGE: FAIL | Palantir | Technical Program Manager - Autonomous Systems C2 | 2.1/5 | On-site requirement, company outside target domains (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stage/domain far outside SaaS, web3, or in…
+    https://jobs.lever.co/palantir/119ff141-1fa7-4466-a154-da57cf17bd52
+TRIAGE: FAIL | Palantir | Technical Program Manager (TPM) - Defense | 2.1/5 | On-site requirement in Washington, D.C. and company domain outside target archetypes. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stage/do…
+    https://jobs.lever.co/palantir/bd16f7ad-3bee-48fd-9902-b3ee9698b608
+TRIAGE: FAIL | Aristocrat Poland | Senior Project Manager | 2.1/5 | Role requires on-site presence outside Serbia, company domain is far outside target areas. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company sta…
+    https://solid.jobs/o/ud8gkd9k/career-ops
+TRIAGE: FAIL | TeamQuest | IT Delivery Manager | 2.1/5 | Regular on-site required outside Serbia, salary below target (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://solid.jobs/o/wd05r30x/career-ops
+TRIAGE: FAIL | Blackbird | IT Project Manager | 2.1/5 | Requires PMP certification and Polish language, below comp floor (flags: Requires a professional certification (e.g., PMP) not held; Language requirement that'…
+    https://solid.jobs/o/zfmevdo7/career-ops
+TRIAGE: FAIL | CARIAD (Volkswagen) | Project Manager Sr - VW Consulting | 2.1/5 | Regular hybrid/on-site outside Serbia, automotive domain mismatch (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stage/domain far outside Saa…
+    https://jobs.volkswagen-group.com/Volkswagen/job/Reston-Project-Manager-Sr-VW-Consulting-VA-20190/1368745633/
+TRIAGE: FAIL | Lovable | Product Manager (Build Experience) | 2.0/5 | On-site requirement outside Serbia, language requirement. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.ashbyhq.com/lovable/e8897c7e-53bd-43f8-94bb-02237f4459bb
+TRIAGE: FAIL | Lovable | Product Manager (Security) | 2.0/5 | On-site requirement outside Serbia, language requirement. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.ashbyhq.com/lovable/282cea94-a525-43a6-a18e-8b92900d03f8
+TRIAGE: FAIL | Lovable | Product Manager (Identity & Access Management) | 2.0/5 | On-site requirement outside Serbia, English language requirement (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not Engli…
+    https://jobs.ashbyhq.com/lovable/725b8529-5c3e-4b23-867e-8e2766bc9629
+TRIAGE: FAIL | Diabolocom | Technical Project Manager - Engineering Delivery | 2.0/5 | Requires on-site presence outside Serbia, language requirement. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not Englis…
+    https://jobs.eu.lever.co/diabolocom/8d744eb6-0017-43f7-86be-6a7ee42fa459
+TRIAGE: FAIL | Lumicode (Grupa Pentacomp) | Senior Project Manager | 2.0/5 | Hybrid model outside Serbia, below target compensation, language requirement (Polish) (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language require…
+    https://solid.jobs/o/97gr3emb/career-ops
+TRIAGE: FAIL | Scalo | IT Project Manager | 2.0/5 | Hybrid role requires on-site presence in Warsaw, Poland; compensation below target range; language requirement (Polish). (Hard DQ: Regular hybrid/on-site outsi…
+    https://solid.jobs/o/fm0ge5o1/career-ops
+TRIAGE: FAIL | Droids On Roids | Product Owner | 2.0/5 | Regular hybrid/on-site outside Serbia, language requirement (Polish) (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not E…
+    https://solid.jobs/o/8hpcfoy8/career-ops
+TRIAGE: FAIL | Celonis | Senior Application Product Manager - Supply Chain - Procurement | 1.9/5 | Regular hybrid/on-site outside Serbia, language requirement (English and German) (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement…
+    https://job-boards.greenhouse.io/celonis/jobs/7885800003?gh_jid=7885800003
+TRIAGE: FAIL | Qonto | Staff Product Manager \[Accounting expertise\] - German speaking 🇩🇪 | 1.9/5 | On-site requirement outside Serbia, language barrier. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.lever.co/qonto/53f5103c-e7eb-4b7f-baa4-777968faf405
+TRIAGE: FAIL | Qonto | Staff Product Manager \[Accounting expertise\] 🇩🇪 | 1.9/5 | On-site requirement outside Serbia, language barrier. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.lever.co/qonto/0e318026-6cb0-475f-a479-9c559b9e0d69
+TRIAGE: FAIL | Isomorphic Labs | Senior Technical Program Manager (InfoSec), London | 1.9/5 | Requires regular on-site presence outside Serbia, certification requirement. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Requires a professional c…
+    https://job-boards.greenhouse.io/isomorphiclabs/jobs/5990644004
+TRIAGE: FAIL | DCG | IT Project Manager | 1.9/5 | Hybrid role outside Serbia, low comp, Polish language requirement. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not Eng…
+    https://solid.jobs/o/3x8licfa/career-ops
+TRIAGE: FAIL | Andersen Lab | Project Manager | 1.9/5 | On-site requirement, below comp target, language requirement (flags: Language requirement that's not English)
+    https://solid.jobs/o/vvcws9b8/career-ops
+TRIAGE: FAIL | Andersen Lab | Service Delivery Manager | 1.9/5 | Role requires on-site presence outside Serbia, low comp, no direct match to candidate's experience. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://solid.jobs/o/h6qkw9tq/career-ops
+TRIAGE: FAIL | Addepto | Project Manager (AI & Big Data) | 1.9/5 | Regular hybrid/on-site outside Serbia, requires relocation; below comp floor. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement tha…
+    https://solid.jobs/o/2etfv9u9/career-ops
+TRIAGE: FAIL | Scalo | Project Manager | 1.9/5 | Hybrid role outside Serbia, below comp floor, requires PRINCE2 certification (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Requires a professional c…
+    https://solid.jobs/o/o4ox5kcv/career-ops
+TRIAGE: FAIL | Infolet | IT Project Manager | 1.9/5 | Regular hybrid/on-site outside Serbia, language requirement (Polish) (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not E…
+    https://solid.jobs/o/p90b99k3/career-ops
+TRIAGE: FAIL | Cohere | Revenue Enablement Program Manager - EMEA | 1.8/5 | Pure GTM role, no product/delivery ownership (flags: Pure GTM/marketing role with no delivery/roadmap ownership)
+    https://jobs.ashbyhq.com/cohere/595a2d50-46a5-4ff9-af1c-d58cea9d8e68
+TRIAGE: FAIL | AUTENTI | Senior Product Manager | 1.8/5 | On-site requirement outside Serbia, below target compensation (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://solid.jobs/o/cyagvqxr/career-ops
+TRIAGE: FAIL | Cohere | Technical Program Manager, AI Delivery for Public Sector & Defence, UK | 1.6/5 | Hybrid role outside Serbia, requires security clearance. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Requires a professional certification (e.g.,…
+    https://jobs.ashbyhq.com/cohere/10306789-4fd5-4f1d-90aa-8132c2df2848
+TRIAGE: FAIL | DCG | Project Manager | 1.5/5 | Hybrid model outside Serbia, below target compensation, requires PMP certification (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Requires a professi…
+    https://solid.jobs/o/5guiq7h1/career-ops
+TRIAGE: FAIL | CARIAD (Volkswagen) | Technical Field Service Project Manager | 1.5/5 | On-site only in Ashburn, VA, no remote option. (Hard DQ: Regular hybrid/on-site outside Serbia)
+    https://jobs.volkswagen-group.com/Electrify_America/job/Ashburn-Technical-Field-Service-Project-Manager-VA-20147/1435059233/
+TRIAGE: FAIL | Sierra | Product Manager, Agent Development (German speaking) | 1.4/5 | On-site only in London, requires German language (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.ashbyhq.com/sierra/fed8ca9a-0bb7-44ef-a541-0be6a8ae7bba
+TRIAGE: FAIL | Sierra | Product Manager, Agent Development (French speaking) | 1.4/5 | On-site only in London, requires French language (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.ashbyhq.com/sierra/38f06024-4ee9-47d6-a36f-f2791ac1e412
+TRIAGE: FAIL | Sierra | Product Manager, Agent Development (Spanish speaking) | 1.4/5 | On-site only in London, requires Spanish. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.ashbyhq.com/sierra/4892f01e-8871-4b32-8963-527f1cf8db5d
+TRIAGE: FAIL | Sierra | Product Manager, Agent Development (Arabic speaking) | 1.4/5 | On-site only in London, requires Arabic language. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.ashbyhq.com/sierra/9dc1651d-43e9-4970-a757-a5223cef1c4d
+TRIAGE: FAIL | Sierra | Product Manager, Agent Development (Italian speaking) | 1.4/5 | On-site only in London, requires Italian language (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Language requirement that's not English)
+    https://jobs.ashbyhq.com/sierra/2e07f536-bbaa-4cc0-957a-774ddf99de64
+TRIAGE: FAIL | Celonis | AI Product Manager (Demo) | 1.4/5 | Role requires on-site in Spain, no match to candidate's experience (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no del…
+    https://job-boards.greenhouse.io/celonis/jobs/7989839003?gh_jid=7989839003
+TRIAGE: FAIL | Celonis | Principal Project Manager | 1.4/5 | Regular hybrid/on-site outside Serbia, requires PMP certification. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Requires a professional certificati…
+    https://job-boards.greenhouse.io/celonis/jobs/7815133003?gh_jid=7815133003
+TRIAGE: FAIL | CARIAD (Volkswagen) | IT/OT Project Manager | 1.4/5 | Role requires on-site presence, outside Serbia, and PMP certification is required. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Requires a professi…
+    https://jobs.volkswagen-group.com/Volkswagen-Group-Services/job/Palmela-ITOT-Project-Manager-2950-677/1416713733/
+TRIAGE: FAIL | CARIAD (Volkswagen) | AI Product Manager | 1.4/5 | Company domain outside SaaS/web3/infrastructure (Hard DQ: location rules exclude this posting · flags: Company stage/domain far outside SaaS, web3, or infrastr…
+    https://jobs.volkswagen-group.com/VWFS/job/Reston-AI-Product-Manager-VA-20190/1389623233/
+TRIAGE: FAIL | Pekao CoNext | Product Owner | 1.1/5 | On-site only in Warsaw, no remote/hybrid option, below comp floor, banking focus (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stage/domain…
+    https://solid.jobs/o/7wugshs4/career-ops
+TRIAGE: FAIL | CARIAD (Volkswagen) | Unsolicited application / (Senior) Consultant, Project Manager Volkswagen Group… | 1.1/5 | Role is consulting-focused, outside target domains, and requires on-site work in Germany. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stag…
+    https://jobs.volkswagen-group.com/Volkswagen/job/Wolfsburg-Unsolicited-application-%28Senior%29-Consultant%2C-Project-Manager-Volkswagen-Group-Consulting-%28fmd%29-38436/1407460333/
+TRIAGE: FAIL | Celonis | GTM Program Manager | 1.0/5 | Pure GTM role, on-site in UK, no match to candidate's experience (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no deliv…
+    https://job-boards.greenhouse.io/celonis/jobs/7827537003?gh_jid=7827537003
+TRIAGE: FAIL | Synthesia | Head of Product Marketing | 1.0/5 | Pure GTM role, no product/delivery ownership, on-site outside Serbia (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no d…
+    https://jobs.ashbyhq.com/synthesia/8d8233ca-15c4-4feb-99f6-46c5c48db52c
+TRIAGE: FAIL | Pigment | Global Employee Onboarding, Program Manager | 1.0/5 | Pure GTM/marketing role, no remote option outside Belgrade (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no delivery/ro…
+    https://jobs.lever.co/pigment/828b2d48-3531-452c-8a6c-40b8a1ee68dc
+TRIAGE: FAIL | Cohere | Technical Program Manager, AI Delivery for Public Sector & Defense, France | 0.9/5 | On-site only in France, requires French citizenship and fluency, no remote option. (Hard DQ: location rules exclude this posting · flags: Requires a profession…
+    https://jobs.ashbyhq.com/cohere/fc5cb642-23df-430e-ae84-67215384be1c
+TRIAGE: FAIL | Celonis | Lead Project Manager | 0.9/5 | On-site in Germany, requires PMP and German fluency (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Requires a professional certification (e.g., PMP)…
+    https://job-boards.greenhouse.io/celonis/jobs/7683452003?gh_jid=7683452003
+TRIAGE: FAIL | APERAM STAINLESS SERVICES | EDI Project Manager | 0.9/5 | Role requires on-site work outside Serbia, company domain mismatch, language requirement. (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Company stag…
+    https://solid.jobs/o/rijr98nw/career-ops
+TRIAGE: FAIL | Grupa VIST | Digital Project Manager | 0.6/5 | Pure GTM role, on-site in Poland, below comp floor (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no delivery/roadmap ow…
+    https://solid.jobs/o/03bt15n0/career-ops
+TRIAGE: FAIL | Celonis | Customer Engagement Program Manager - Scale Team | 0.5/5 | Pure GTM role, on-site in Germany, language requirement (Hard DQ: location rules exclude this posting · flags: Pure GTM/marketing role with no delivery/roadmap…
+    https://job-boards.greenhouse.io/celonis/jobs/7823007003?gh_jid=7823007003
+TRIAGE: FAIL | Celonis | Customer Success Program Manager - Scale Team | 0.5/5 | Pure GTM role, on-site in Germany, language requirement (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no delivery/roadm…
+    https://job-boards.greenhouse.io/celonis/jobs/7823005003?gh_jid=7823005003
+TRIAGE: FAIL | Celonis | Lead Project Manager (German speaker) | 0.4/5 | Pure GTM role, requires PMP, on-site in Spain (Hard DQ: Regular hybrid/on-site outside Serbia · flags: Pure GTM/marketing role with no delivery/roadmap ownersh…
+    https://job-boards.greenhouse.io/celonis/jobs/7683454003?gh_jid=7683454003
+TRIAGE: SKIP | Helsing | Procurement Project Manager | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://helsing.ai/jobs/4862537101?gh_jid=4862537101
+TRIAGE: SKIP | Helsing | Product Manager, Autonomous Systems Command & Control | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://helsing.ai/jobs/4947377101?gh_jid=4947377101
+TRIAGE: SKIP | Helsing | Product Manager — Electronic Warfare (Offboard & Cross-Platform) | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://helsing.ai/jobs/4869481101?gh_jid=4869481101
+TRIAGE: SKIP | HelloFresh | Product Manager (12 month FTC) | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://careers.hellofresh.com/global/en/job/8204371?gh_jid=8204371
+TRIAGE: SKIP | HelloFresh | Senior Product Manager | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://careers.hellofresh.com/global/en/job/8025707?gh_jid=8025707
+TRIAGE: SKIP | HelloFresh | Senior Product Manager II, Logistics (all genders) | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://careers.hellofresh.com/global/en/job/8186086?gh_jid=8186086
+TRIAGE: SKIP | HelloFresh | Senior Product Manager, Intelligent Platforms | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://careers.hellofresh.com/global/en/job/8095957?gh_jid=8095957
+TRIAGE: SKIP | HelloFresh | Senior Strategic Product Manager (M/F/X) | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://careers.hellofresh.com/global/en/job/8093756?gh_jid=8093756
+TRIAGE: SKIP | HelloFresh | Staff Product Manager, Benefits Platform (all genders) | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://careers.hellofresh.com/global/en/job/8043204?gh_jid=8043204
+TRIAGE: SKIP | N26 | Head of Product, Core Banking Systems | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://n26.com/en-eu/careers/positions/8111591?gh_jid=8111591
+TRIAGE: SKIP | N26 | Head of Product - Lending | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://n26.com/en-eu/careers/positions/7988511?gh_jid=7988511
+TRIAGE: SKIP | N26 | Senior Technical Product Manager — GenAI & Agentic Systems | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://n26.com/en-eu/careers/positions/8196495?gh_jid=8196495
+TRIAGE: SKIP | N26 | Technical Product Manager - Applied Machine Learning | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://n26.com/en-eu/careers/positions/8196295?gh_jid=8196295
+TRIAGE: SKIP | SumUp | Senior Product Manager - Consumer Lifecycle | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://sumup.com/careers/positions/8821322002?gh_jid=8821322002
+TRIAGE: SKIP | SumUp | Senior Product Manager - SuperApp | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://sumup.com/careers/positions/8602383002?gh_jid=8602383002
+TRIAGE: SKIP | Wayve | Lead Technical Program Manager, AI Platform | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://wayve.firststage.co/jobs?gh_jid=8781505002
+TRIAGE: SKIP | Wayve | Lead Technical Program Manager, Data | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://wayve.firststage.co/jobs?gh_jid=8625514002
+TRIAGE: SKIP | Wayve | Lead Technical Program Manager, Quality & Compliance | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://wayve.firststage.co/jobs?gh_jid=8781680002
+TRIAGE: SKIP | Wayve | Product Manager, AI Driver | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://wayve.firststage.co/jobs?gh_jid=8702742002
+TRIAGE: SKIP | Wayve | Technical Product Manager - Development Vehicles | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://wayve.firststage.co/jobs?gh_jid=8735092002
+TRIAGE: SKIP | Wayve | Technical Program Manager | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://wayve.firststage.co/jobs?gh_jid=8739398002
+TRIAGE: SKIP | Spotify | Senior Product Manager - User Platform | 0.0/5 | ATS API returned no JD — posting likely closed (verify with check-liveness.mjs)
+    https://jobs.lever.co/spotify/ee45924c-894c-4ea0-9c93-c5221894063f
+TRIAGE: SKIP | ambiscale | Project Manager | 0.0/5 | Page has no readable JD (JS-rendered or closed) — check manually
+    https://solid.jobs/o/7jr1ldvk/career-ops
+TRIAGE: ERROR | CARIAD (Volkswagen) | Product Manager | 0/5 | Model call failed: timed out after 300s
+    https://jobs.volkswagen-group.com/Volkswagen-Group-Services/job/Valencia-Product-Manager-V-46002/1386989433/

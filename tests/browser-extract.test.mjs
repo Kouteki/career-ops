@@ -406,6 +406,40 @@ try {
     fail(`normalizeLeverJob  => ${JSON.stringify(lever)}`);
   }
 
+  // Multi-location posting: the body names only the primary city, so the other
+  // `allLocations` and the `workplaceType` have to reach the meta header or the
+  // triage location gate sees a Paris-only role (real case: Qonto, 2026-10-04).
+  const leverMulti = normalizeLeverJob(
+    {
+      text: 'Senior Product Manager',
+      descriptionPlain: 'Build the platform.',
+      workplaceType: 'hybrid',
+      categories: { location: 'Paris', team: 'Product', allLocations: ['Paris', 'Berlin', ' belgrade ', 'Belgrade', ''] },
+    },
+    'https://jobs.lever.co/acme/1',
+  );
+  if (leverMulti
+      && leverMulti.text.includes('Location: Paris')
+      && leverMulti.text.includes('Additional locations: Berlin | belgrade')
+      && !/Additional locations:[^\n]*Paris/.test(leverMulti.text)
+      && leverMulti.text.includes('Work model: hybrid')) {
+    pass('normalizeLeverJob lists every allLocations entry once and the work model');
+  } else {
+    fail(`normalizeLeverJob multi-location => ${JSON.stringify(leverMulti)}`);
+  }
+
+  const leverUnspecified = normalizeLeverJob(
+    { text: 'X', descriptionPlain: 'Body.', workplaceType: 'unspecified', categories: { location: 'Paris', allLocations: ['Paris'] } },
+    'https://x/1',
+  );
+  if (leverUnspecified
+      && !leverUnspecified.text.includes('Work model')
+      && !leverUnspecified.text.includes('Additional locations')) {
+    pass('normalizeLeverJob omits an unspecified work model and a primary-only location list');
+  } else {
+    fail(`normalizeLeverJob unspecified => ${JSON.stringify(leverUnspecified)}`);
+  }
+
   const leverNulls = [
     normalizeLeverJob(null, 'https://x/1'),
     normalizeLeverJob({}, 'https://x/1'),

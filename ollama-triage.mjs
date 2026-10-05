@@ -67,7 +67,7 @@ const MIN_JD_CHARS = 200;     // below this a page is a shell, not a JD (browser
 const FETCH_TIMEOUT_MS = 20_000;
 const REASON_MAX = 160;
 // Bump when the prompt or scoring changes, so cached verdicts are redone.
-const PROMPT_VERSION = 7;
+const PROMPT_VERSION = 9;
 
 const USAGE = `
   ollama-triage.mjs — first-pass triage on a local Ollama model (writes no files)
@@ -256,11 +256,50 @@ export function regionOpenToCandidate(text) {
 }
 
 /**
+ * The ATS location header the JD normalizers in browser-extract.mjs put at the
+ * top of the text (`Location:` / `Additional locations:`). It is structured
+ * data, unlike the body, which on multi-location postings usually repeats only
+ * the primary city.
+ */
+export function jdLocationHeader(text) {
+  return String(text ?? '').split('\n').slice(0, 12)
+    .filter((l) => /^(Location|Additional locations):/i.test(l.trim()))
+    .join('\n');
+}
+
+// Hard DQ rules that are about where the work happens, so they cannot apply to
+// a posting the candidate can take in their own city.
+const LOCATION_DQ_RE = /region|relocat|outside|on-?site|hybrid|sponsor/i;
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/**
  * If the model failed location (score 1 / region DQ) but the posting's own
  * location wording is open to the candidate, restore location 5 and drop the
  * region DQ. Returns the (possibly) corrected judgement plus a note.
+ *
+ * Stronger case first: the ATS location header names the candidate's own city
+ * (profile.yml `location.city`). qwen2.5:14b read "Location: Paris" plus
+ * "Additional locations: … | Belgrade" and still ticked "Regular hybrid/on-site
+ * outside Serbia" (Qonto, 2026-10-04), and copied only "Paris" into
+ * location_text, so the region check below never saw Belgrade. That case
+ * clears every location-type DQ, since none can apply to a role open in the
+ * candidate's city. Only the header is matched, never the body, where a city
+ * name can appear for unrelated reasons.
  */
-export function applyRegionOverride(j, hardDq = []) {
+export function applyRegionOverride(j, hardDq = [], { jdLocations = '', candidateCity = '' } = {}) {
+  const city = String(candidateCity ?? '').trim();
+  if (city && new RegExp(`\\b${escapeRe(city)}\\b`, 'i').test(jdLocations)) {
+    const locIds = hardDq.map((c, i) => (LOCATION_DQ_RE.test(c) ? `dq${i + 1}` : null)).filter(Boolean);
+    const failed = Number(j?.location?.score) <= 1 || locIds.some((id) => j?.hard_dq_checks?.[id] === true);
+    if (failed) {
+      const checks = { ...(j.hard_dq_checks ?? {}) };
+      for (const id of locIds) checks[id] = false;
+      return {
+        j: { ...j, hard_dq_checks: checks, location: { score: 5, note: `Posting lists ${city} (model said: ${j.location?.note ?? ''})` }, location_text: jdLocations.replace(/\n/g, '; ') },
+        overridden: true,
+      };
+    }
+  }
   const idx = hardDq.findIndex((c) => /region|relocat/i.test(c));
   const regionDq = idx === -1 ? null : `dq${idx + 1}`;
   const failedLocation = Number(j?.location?.score) <= 1 || (regionDq && j?.hard_dq_checks?.[regionDq] === true);
@@ -270,6 +309,55 @@ export function applyRegionOverride(j, hardDq = []) {
   return {
     j: { ...j, hard_dq_checks: checks, location: { score: 5, note: `Open to Europe per posting: "${j.location_text}" (model said: ${j.location?.note ?? ''})` } },
     overridden: true,
+  };
+}
+
+// Archetype score a posting whose title IS one of the candidate's target roles
+// can never drop below. qwen2.5:14b scored "Senior Product Manager - Client
+// Communication" archetype 2 ("does not match any of the target archetypes")
+// against a profile whose first target role is "Senior Product Manager"
+// (2026-10-04). 4, not 5: the title proves the role type, not the domain fit.
+export const TITLE_MATCH_FLOOR = 4;
+
+/** Target role titles from profile.yml: `target_roles.primary` + archetype names, deduped. */
+export function parseTargetRoles(profile) {
+  const tr = profile?.target_roles;
+  const raw = [
+    ...(Array.isArray(tr?.primary) ? tr.primary : []),
+    ...(Array.isArray(tr?.archetypes) ? tr.archetypes.map((a) => a?.name) : []),
+  ];
+  const out = [];
+  for (const r of raw) {
+    if (typeof r !== 'string' || !r.trim()) continue;
+    if (!out.some((o) => o.toLowerCase() === r.trim().toLowerCase())) out.push(r.trim());
+  }
+  return out;
+}
+
+const normTitle = (s) => ` ${String(s ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\bsr\b/g, 'senior').replace(/\s+/g, ' ').trim()} `;
+
+/** The longest target role that appears as a whole phrase in the posting title, or ''. */
+export function matchTargetRole(title, targets = []) {
+  const t = normTitle(title);
+  if (t.trim() === '') return '';
+  return targets
+    .filter((r) => normTitle(r).trim() && t.includes(normTitle(r)))
+    .sort((a, b) => b.length - a.length)[0] ?? '';
+}
+
+/**
+ * Raise the archetype score to TITLE_MATCH_FLOOR when the posting's own title
+ * (from the ATS or the pipeline row, never the model's restatement of it)
+ * contains a target role. Only ever raises; every other dimension, DQ and red
+ * flag is left alone, so a deep-engineering or wrong-location role still fails.
+ */
+export function applyTitleFloor(j, title, targets = []) {
+  const hit = matchTargetRole(title, targets);
+  const score = Number(j?.archetype?.score);
+  if (!hit || (Number.isFinite(score) && score >= TITLE_MATCH_FLOOR)) return { j, floored: '' };
+  return {
+    j: { ...j, archetype: { score: TITLE_MATCH_FLOOR, note: `Title matches target role "${hit}" (model said: ${j?.archetype?.note ?? ''})` } },
+    floored: hit,
   };
 }
 
@@ -414,6 +502,14 @@ async function main(args) {
     const t = Number(yaml.load(profileYml)?.pipeline?.triage_threshold);
     if (Number.isFinite(t) && t > 0) threshold = t;
   } catch { /* default */ }
+  let candidateCity = '';
+  let targetRoles = [];
+  try {
+    const profile = yaml.load(profileYml);
+    const c = profile?.location?.city;
+    if (typeof c === 'string') candidateCity = c.trim();
+    targetRoles = parseTargetRoles(profile);
+  } catch { /* no city / roles: the ATS-header override and title floor stay off */ }
   const tFlag = Number(flagValue(args, '--threshold'));
   if (Number.isFinite(tFlag) && tFlag > 0) threshold = tFlag;
   const overrides = parsePriorityOverrides(brief);
@@ -504,8 +600,9 @@ async function main(args) {
       const t0 = Date.now();
       try {
         const raw = await judge({ baseUrl, model: requestModel, numCtx, timeoutMs, systemPrompt, schema, entry, jdText: jd.text });
-        const { j: corrected, overridden } = applyRegionOverride(raw, hardDqList);
-        const j = foldChecks(corrected, hardDqList, softFlagList);
+        const { j: corrected, overridden } = applyRegionOverride(raw, hardDqList, { jdLocations: jdLocationHeader(jd.text), candidateCity });
+        const { j: titled, floored } = applyTitleFloor(corrected, jd.title || entry.role, targetRoles);
+        const j = foldChecks(titled, hardDqList, softFlagList);
         const company = entry.company || j.company;
         // --url/--file entries only learn their company from the posting itself.
         const hit = findBlacklistEntry(blacklist, company, entry.url);
@@ -521,11 +618,14 @@ async function main(args) {
           s.flags?.length && `flags: ${s.flags.join('; ')}`,
           priority && 'priority override',
           overridden && `location corrected: posting says "${cleanField(j.location_text, 60)}"`,
+          floored && `archetype floored: title matches "${floored}"`,
         ].filter(Boolean).join(' · ');
         result = {
           ...base,
           company,
-          role: entry.role || j.role || base.role,
+          // The posting's own title before the model's restatement, which drops
+          // words ("Senior PM - X" came back as "PM, X").
+          role: entry.role || jd.title || j.role || base.role,
           verdict: s.verdict,
           score: s.score,
           reason: s.verdict === 'ERROR' ? 'Model returned an incomplete judgement' : `${j.reason}${extras ? ` (${extras})` : ''}`,
@@ -606,6 +706,28 @@ function selfTest() {
   check('override restores location 5 and clears the region DQ', ov.overridden && ov.j.location.score === 5 && ov.j.hard_dq_checks.dq1 === false);
   check('override never touches a closed region', !applyRegionOverride({ location_text: 'LATAM', location: { score: 1 }, hard_dq_checks: { dq1: true } }, [R]).overridden);
   check('override never touches a passing location', !applyRegionOverride({ location_text: 'Europe', location: { score: 5 }, hard_dq_checks: { dq1: false } }, [R]).overridden);
+
+  const hdr = jdLocationHeader('Senior PM\n\nLocation: Paris\nAdditional locations: Berlin | Belgrade\nWork model: hybrid\nTeam: Product\n\nBody mentions Belgrade');
+  check('location header keeps only the ATS location lines', hdr === 'Location: Paris\nAdditional locations: Berlin | Belgrade');
+  const DQ = ['Sponsorship needed outside Serbia', 'Deep engineering IC role', 'Regular hybrid/on-site outside Serbia'];
+  const paris = { location_text: 'Paris', location: { score: 2, note: 'hybrid Paris' }, hard_dq_checks: { dq1: false, dq2: false, dq3: true } };
+  const city = applyRegionOverride(paris, DQ, { jdLocations: hdr, candidateCity: 'Belgrade' });
+  check('ATS header naming the candidate city clears location DQs only', city.overridden && city.j.location.score === 5 && city.j.hard_dq_checks.dq3 === false && city.j.hard_dq_checks.dq2 === false && /Belgrade/.test(city.j.location_text));
+  const eng = applyRegionOverride({ ...paris, hard_dq_checks: { dq1: false, dq2: true, dq3: true } }, DQ, { jdLocations: hdr, candidateCity: 'Belgrade' });
+  check('a non-location DQ survives the city override', eng.overridden && eng.j.hard_dq_checks.dq2 === true);
+  check('city in the body only does not override', !applyRegionOverride(paris, DQ, { jdLocations: jdLocationHeader('Location: Paris\n\nWe also have a Belgrade office'), candidateCity: 'Belgrade' }).overridden);
+  check('no candidate city configured: no city override', !applyRegionOverride(paris, DQ, { jdLocations: hdr, candidateCity: '' }).overridden);
+
+  const roles = parseTargetRoles({ target_roles: { primary: ['Senior Product Manager', 'Product Manager'], archetypes: [{ name: 'product manager' }, { name: 'Technical Project Manager' }, {}] } });
+  check('target roles: primary + archetype names, case-deduped', roles.join('|') === 'Senior Product Manager|Product Manager|Technical Project Manager');
+  check('title match picks the longest whole-phrase role', matchTargetRole('Senior Product Manager - Client Communication', roles) === 'Senior Product Manager' && matchTargetRole('Sr. Product Manager, Payments', roles) === 'Senior Product Manager');
+  check('title match is whole-phrase, not substring', matchTargetRole('Product Marketing Manager', roles) === '' && matchTargetRole('Technical Project Managers Lead', roles) === '' && matchTargetRole('', roles) === '');
+  const low = { archetype: { score: 2, note: 'no match' }, location: { score: 5 } };
+  const fl = applyTitleFloor(low, 'Senior Product Manager - Client Communication', roles);
+  check('title floor raises archetype to the floor and names the role', fl.floored === 'Senior Product Manager' && fl.j.archetype.score === TITLE_MATCH_FLOOR && fl.j.location.score === 5);
+  check('title floor never lowers a higher archetype score', applyTitleFloor({ archetype: { score: 5 } }, 'Product Manager', roles).j.archetype.score === 5);
+  check('title floor does not touch a non-matching title', !applyTitleFloor(low, 'Data Engineer', roles).floored);
+  check('title floor leaves hard DQs to cap the score', scoreJudgement({ ...dims(TITLE_MATCH_FLOOR, 5, 5, 5), hard_dq: { hit: true } }).score === 2.5);
 
   const cacheText = [
     JSON.stringify({ key: 'k1', url: 'https://a.test/1', score: 3.2, date: '2026-09-01' }),

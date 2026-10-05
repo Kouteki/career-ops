@@ -414,7 +414,9 @@ export function isAtsPosting(url) {
 // for liveness only — their public endpoints answer search/status, never body
 // text — so they are deliberately excluded here; see fetch-jd.mjs / the
 // fetch*Jd() family in browser-extract.mjs for the per-provider fetchers.
-export const JD_TEXT_API_ATS = new Set(['greenhouse', 'lever', 'ashby', 'workday']);
+// `greenhouse-embedded` (a careers page carrying only `?gh_jid=`) resolves its
+// board through the embed redirect, then reads the same per-job body.
+export const JD_TEXT_API_ATS = new Set(['greenhouse', 'greenhouse-embedded', 'lever', 'ashby', 'workday']);
 
 /**
  * Zero-token liveness check via the posting's ATS API.
